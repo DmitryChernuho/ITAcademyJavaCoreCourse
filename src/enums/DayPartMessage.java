@@ -1,10 +1,10 @@
 package enums;
 
 public enum DayPartMessage {
-    MORNING("Good morning!"),
-    DAY("Good day!"),
-    EVENING("Good evening!"),
-    NIGHT("Good night!");
+    MORNING ("Good morning!"),
+    DAY ("Good day!"),
+    EVENING ("Good evening!"),
+    NIGHT ("Good night!");
 
     private final String DayPartMessage;
 
