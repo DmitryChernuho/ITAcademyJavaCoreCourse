@@ -1,0 +1,6 @@
+firstValue, secondValue, expectedResult
+One, Two, OneTwo
+1, 2, 12
++, -, +-
+One = , 1, One = 1
+Two = , 2, Two = 2
