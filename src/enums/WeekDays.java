@@ -1,13 +1,13 @@
 package enums;
 
 public enum WeekDays {
-    SUNDAY ("Sunday"),
-    MONDAY ("Monday"),
-    TUESDAY ("Tuesday"),
-    WEDNESDAY ("Wednesday"),
-    THURSDAY ("Thursday"),
-    FRIDAY ("Friday"),
-    SATURDAY ("Saturday");
+    SUNDAY("Sunday"),
+    MONDAY("Monday"),
+    TUESDAY("Tuesday"),
+    WEDNESDAY("Wednesday"),
+    THURSDAY("Thursday"),
+    FRIDAY("Friday"),
+    SATURDAY("Saturday");
 
     private final String weekDay;
 

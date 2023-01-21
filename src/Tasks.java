@@ -6,45 +6,54 @@ import enums.WeekDaysNumber;
 public class Tasks {
     private final static String MESSAGE_PATTERN = "%s - is %s\n";
 
-    public static void printWeekDayByDayNumberUsingSwitchCase(int dayNumber) {
+    public static void weekDayByDayNumberUsingSwitchCase(int dayNumber) {
         switch (dayNumber) {
-            case 1 -> System.out.printf(MESSAGE_PATTERN, dayNumber, WeekDays.SUNDAY.getWeekDay());
-            case 2 -> System.out.printf(MESSAGE_PATTERN, dayNumber, WeekDays.MONDAY.getWeekDay());
-            case 3 -> System.out.printf(MESSAGE_PATTERN, dayNumber, WeekDays.TUESDAY.getWeekDay());
-            case 4 -> System.out.printf(MESSAGE_PATTERN, dayNumber, WeekDays.WEDNESDAY.getWeekDay());
-            case 5 -> System.out.printf(MESSAGE_PATTERN, dayNumber, WeekDays.THURSDAY.getWeekDay());
-            case 6 -> System.out.printf(MESSAGE_PATTERN, dayNumber, WeekDays.FRIDAY.getWeekDay());
-            case 7 -> System.out.printf(MESSAGE_PATTERN, dayNumber, WeekDays.SATURDAY.getWeekDay());
+            case 1 -> printMessageNumberDayIsNameDay(dayNumber, WeekDays.SUNDAY.getWeekDay());
+            case 2 -> printMessageNumberDayIsNameDay(dayNumber, WeekDays.MONDAY.getWeekDay());
+            case 3 -> printMessageNumberDayIsNameDay(dayNumber, WeekDays.TUESDAY.getWeekDay());
+            case 4 -> printMessageNumberDayIsNameDay(dayNumber, WeekDays.WEDNESDAY.getWeekDay());
+            case 5 -> printMessageNumberDayIsNameDay(dayNumber, WeekDays.THURSDAY.getWeekDay());
+            case 6 -> printMessageNumberDayIsNameDay(dayNumber, WeekDays.FRIDAY.getWeekDay());
+            case 7 -> printMessageNumberDayIsNameDay(dayNumber, WeekDays.SATURDAY.getWeekDay());
             default -> System.out.println("Week day is not valid");
         }
     }
 
-    public static void printWeekDayByDayNumberUsingIfElse(int dayNumber) {
-        if (dayNumber == Integer.parseInt(WeekDaysNumber.SUNDAY.getWeekDaysNumber())) {
-            System.out.printf(MESSAGE_PATTERN, dayNumber, WeekDays.SUNDAY.getWeekDay());
-        } else if (dayNumber == Integer.parseInt(WeekDaysNumber.MONDAY.getWeekDaysNumber())) {
-            System.out.printf(MESSAGE_PATTERN, dayNumber, WeekDays.MONDAY.getWeekDay());
-        } else if (dayNumber == Integer.parseInt(WeekDaysNumber.TUESDAY.getWeekDaysNumber())) {
-            System.out.printf(MESSAGE_PATTERN, dayNumber, WeekDays.TUESDAY.getWeekDay());
-        } else if (dayNumber == Integer.parseInt(WeekDaysNumber.WEDNESDAY.getWeekDaysNumber())) {
-            System.out.printf(MESSAGE_PATTERN, dayNumber, WeekDays.WEDNESDAY.getWeekDay());
-        } else if (dayNumber == Integer.parseInt(WeekDaysNumber.THURSDAY.getWeekDaysNumber())) {
-            System.out.printf(MESSAGE_PATTERN, dayNumber, WeekDays.THURSDAY.getWeekDay());
-        } else if (dayNumber == Integer.parseInt(WeekDaysNumber.FRIDAY.getWeekDaysNumber())) {
-            System.out.printf(MESSAGE_PATTERN, dayNumber, WeekDays.FRIDAY.getWeekDay());
-        } else if (dayNumber == Integer.parseInt(WeekDaysNumber.SATURDAY.getWeekDaysNumber())) {
-            System.out.printf(MESSAGE_PATTERN, dayNumber, WeekDays.SATURDAY.getWeekDay());
+    public static void weekDayByDayNumberUsingIfElse(int dayNumber) {
+        if (dayNumber == WeekDaysNumber.SUNDAY.getWeekDaysNumber()) {
+            printMessageNumberDayIsNameDay(dayNumber, WeekDays.SUNDAY.getWeekDay());
+
+        } else if (dayNumber == WeekDaysNumber.MONDAY.getWeekDaysNumber()) {
+            printMessageNumberDayIsNameDay(dayNumber, WeekDays.MONDAY.getWeekDay());
+
+        } else if (dayNumber == WeekDaysNumber.TUESDAY.getWeekDaysNumber()) {
+            printMessageNumberDayIsNameDay(dayNumber, WeekDays.TUESDAY.getWeekDay());
+
+        } else if (dayNumber == WeekDaysNumber.WEDNESDAY.getWeekDaysNumber()) {
+            printMessageNumberDayIsNameDay(dayNumber, WeekDays.WEDNESDAY.getWeekDay());
+
+        } else if (dayNumber == WeekDaysNumber.THURSDAY.getWeekDaysNumber()) {
+            printMessageNumberDayIsNameDay(dayNumber, WeekDays.THURSDAY.getWeekDay());
+
+        } else if (dayNumber == WeekDaysNumber.FRIDAY.getWeekDaysNumber()) {
+            printMessageNumberDayIsNameDay(dayNumber, WeekDays.FRIDAY.getWeekDay());
+
+        } else if (dayNumber == WeekDaysNumber.SATURDAY.getWeekDaysNumber()) {
+            printMessageNumberDayIsNameDay(dayNumber, WeekDays.SATURDAY.getWeekDay());
         }
     }
 
     public static void printPartOfDayByHourUsingIfElse(int hour) {
-        if (hour > Integer.parseInt(DayPartHours.NIGHT.getDayPartHours()) && hour < Integer.parseInt(DayPartHours.MORNING.getDayPartHours())) {
+        if (hour > DayPartHours.NIGHT.getDayPartHours() && hour < DayPartHours.MORNING.getDayPartHours()) {
             System.out.println(DayPartMessage.MORNING.getDayPartMessage());
-        } else if (hour > Integer.parseInt(DayPartHours.MORNING.getDayPartHours()) && hour < Integer.parseInt(DayPartHours.DAY.getDayPartHours())) {
+
+        } else if (hour > DayPartHours.MORNING.getDayPartHours() && hour < DayPartHours.DAY.getDayPartHours()) {
             System.out.println(DayPartMessage.DAY.getDayPartMessage());
-        } else if (hour > Integer.parseInt(DayPartHours.DAY.getDayPartHours()) && hour < Integer.parseInt(DayPartHours.EVENING.getDayPartHours())) {
+
+        } else if (hour > DayPartHours.DAY.getDayPartHours() && hour < DayPartHours.EVENING.getDayPartHours()) {
             System.out.println(DayPartMessage.EVENING.getDayPartMessage());
-        } else if (hour < Integer.parseInt(DayPartHours.NIGHT.getDayPartHours())) {
+
+        } else if (hour < DayPartHours.NIGHT.getDayPartHours()) {
             System.out.println(DayPartMessage.NIGHT.getDayPartMessage());
         }
     }
@@ -57,5 +66,9 @@ public class Tasks {
             case 19, 20, 21, 22, 23, 24 -> System.out.println(DayPartMessage.EVENING.getDayPartMessage());
             default -> System.out.println("Hour is not valid");
         }
+    }
+
+    private static void printMessageNumberDayIsNameDay(int dayNumber, String weekDay) {
+        System.out.printf(MESSAGE_PATTERN, dayNumber, weekDay);
     }
 }

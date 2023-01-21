@@ -1,18 +1,18 @@
 package enums;
 
 public enum DayPartHours {
-    MORNING ("12"),
-    DAY ("18"),
-    EVENING ("24"),
-    NIGHT ("6");
+    MORNING(12),
+    DAY(18),
+    EVENING(24),
+    NIGHT(6);
 
-    private final String DayPartHours;
+    private final int DayPartHours;
 
-    DayPartHours(String WeekDaysNumber) {
+    DayPartHours(int WeekDaysNumber) {
         this.DayPartHours = WeekDaysNumber;
     }
 
-    public String getDayPartHours() {
+    public int getDayPartHours() {
         return DayPartHours;
     }
 }
