@@ -1,40 +1,42 @@
 public class Tasks {
 
-    public static void taskNumberOne(int limitNumber) {
+    public static void printNumbersStartZeroTillTen(int limitNumber) {
         for (int i = 0; i < limitNumber; i++) {
             System.out.printf("%s, ", i);
         }
         System.out.println(limitNumber);
     }
 
-    public static void taskNumberTwo(int limitNumber) {
+    public static void printNumbersStartTenTillZero(int limitNumber) {
         for (int i = limitNumber; i > 0; i--) {
             System.out.printf("%s, ", i);
         }
         System.out.println(0);
     }
 
-    public static void taskThree(int limitNumber) {
-        int counter = 0;
-        int startValue = 0;
-        int currentValue = 1;
-        System.out.println(startValue);
-        System.out.println(currentValue);
-        while (counter < limitNumber) {
-            int lastValue = currentValue;
-            System.out.println(currentValue += startValue);
-            startValue = lastValue;
-            counter++;
+    public static void printFibonacciListValue(int limitNumber) {
+        int firstTerm = 0;
+        int secondTerm = 1;
+        int nextTerm;
+        for (int i = 1; i <= limitNumber; ++i) {
+            if(i == limitNumber) {
+                System.out.printf("%s.\n", firstTerm);
+                continue;
+            }
+            System.out.printf("%s, ", firstTerm);
+            nextTerm = firstTerm + secondTerm;
+            firstTerm = secondTerm;
+            secondTerm = nextTerm;
         }
     }
 
-    public static void taskNumberFour(int limitNumber) {
+    public static void printIncreaseTable(int limitNumber) {
         int firstCounter = 1;
         int secondCounter = 1;
         while (firstCounter <= limitNumber) {
             while (secondCounter <= limitNumber) {
                 int firstResult = firstCounter * secondCounter;
-                System.out.printf("%s * %s = %s   \t",secondCounter, firstCounter, firstResult);
+                System.out.printf("%s * %s = %s   \t", secondCounter, firstCounter, firstResult);
                 secondCounter++;
             }
             System.out.print("\n");
