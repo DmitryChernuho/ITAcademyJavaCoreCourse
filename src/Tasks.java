@@ -31,17 +31,17 @@ public class Tasks {
     }
 
     public static void printIncreaseTable(int limitNumber) {
-        int firstCounter = 1;
-        int secondCounter = 1;
-        while (firstCounter <= limitNumber) {
-            while (secondCounter <= limitNumber) {
-                int firstResult = firstCounter * secondCounter;
-                System.out.printf("%s * %s = %s   \t", secondCounter, firstCounter, firstResult);
-                secondCounter++;
+        int multipliedValue = 1;
+        int multiplier = 1;
+        while (multipliedValue <= limitNumber) {
+            while (multiplier <= limitNumber) {
+                int firstResult = multipliedValue * multiplier;
+                System.out.printf("%s * %s = %s   \t", multiplier, multipliedValue, firstResult);
+                multiplier++;
             }
             System.out.print("\n");
-            secondCounter = 1;
-            firstCounter++;
+            multiplier = 1;
+            multipliedValue++;
         }
     }
 }
